@@ -7,3 +7,6 @@
 [submodule "spark/core-communication-lib"]
 	path = spark/core-communication-lib
 	url = https://github.com/spark/core-communication-lib.git
+[submodule "osc"]
+	path = osc
+	url = git@github.com:trublion/sparkcore_osc.git

@@ -4,10 +4,9 @@
 
 ### Setup
 ---
-* Initialise submodules
+* Run the setup script
 
-		$ git submodule init
-		$ git sumbodule update
+		$ ./init.sh
 
 
 * Install and build the [Sparkcore library dependencies](https://github.com/spark/core-firmware/blob/master/README.md)
