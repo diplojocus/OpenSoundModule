@@ -19,4 +19,14 @@
 
 * Follow [these instructions](https://github.com/spark/core-firmware/blob/master/README.md#steps) to install the firmware
 
+
+### Troubleshooting
+---
+
+These are some of the following issues I came across:
+
+* LED constantly flashing green
+	* [follow these steps first](http://docs.spark.io/troubleshooting/#other-problems-my-core-is-behaving-erratically)
+	* [last resort - apply cc3000 patch](https://community.spark.io/t/failed-connecting-to-wifi/648/52)
+
 	
