@@ -15,9 +15,11 @@
 * Compile the firmware
 
 		$ cd ./spark/core-firmware/build
-		$ make
+		$ APP=osm make
 
-* Follow [these instructions](https://github.com/spark/core-firmware/blob/master/README.md#steps) to install the firmware
+* Follow [these instructions](https://github.com/spark/core-firmware/blob/master/README.md#steps) to install the firmware. Although run this dfu-util command instead:
+
+		$ dfu-util -d 1d50:607f -a 0 -s 0x08005000:leave -D applications/osm/osm.bin
 
 
 ### Troubleshooting
