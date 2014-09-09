@@ -1,0 +1,28 @@
+#N canvas 834 229 458 341 10;
+#X obj 278 156 oscparse;
+#X obj 278 132 netreceive -u -b;
+#X msg 278 110 listen 9999;
+#X obj 278 178 print;
+#X obj 39 131 list prepend send;
+#X obj 39 182 list trim;
+#X obj 39 303 netsend -u -b;
+#X msg 65 245 connect 192.168.2.180 8888;
+#X msg 65 277 disconnect;
+#X obj 39 99 oscformat led;
+#X obj 39 42 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X msg 39 63 0 \$1;
+#X text 235 244 set sparkcore ip here and bang;
+#X obj 278 87 loadbang;
+#X connect 0 0 3 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 7 0 6 0;
+#X connect 8 0 6 0;
+#X connect 9 0 4 0;
+#X connect 9 0 0 0;
+#X connect 10 0 11 0;
+#X connect 11 0 9 0;
+#X connect 13 0 2 0;
