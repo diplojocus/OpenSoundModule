@@ -8,18 +8,16 @@ protected:
     const String header = "<html><head><title>OpenSoundModule</title></head><body>OpenSoundModule" \
                           "<script> function togglePin(e) { e.value = (e.value == 'Off') ? 'On' : 'Off'; } </script>";
 
-    const String footer = "</ul></ul></body></html>";
-
     Stream& printBody(Stream& aStream) const {
-        String response = header + "<ul>Digital<ul><li>Inputs</li><ul>";
+        aStream.print(header);
+        aStream.print("<ul>Digital<ul><li>Inputs</li><ul>");
         for (int i = 0; i < 8; ++i) {
             String pinLabel = "D" + String(i);
             String pinSetting = (digitalRead(i) == HIGH) ? "On" : "Off";
-            response += "<li>" + pinLabel + "<input type='button' id='" + pinLabel + "' value='" + pinSetting + "' onclick='togglePin(this)'/></li>";
+            aStream.print("<li>" + pinLabel + "<input type='button' id='" +
+                pinLabel + "' value='" + pinSetting + "' onclick='togglePin(this)'/></li>");
         }
-        response += "</ul>";
-        response += footer;
-        aStream.print(response);
+        aStream.print("</ul></ul></ul></body></html>");
 
         return aStream;
     }
@@ -62,7 +60,8 @@ void setup() {
     pinMode(D3, OUTPUT);
     pinMode(D4, OUTPUT);
     pinMode(D5, OUTPUT);
-    
+  
+    // Set pins for testing web page
     digitalWrite(D0, HIGH);
     digitalWrite(D1, LOW);
     digitalWrite(D2, LOW);
@@ -72,6 +71,7 @@ void setup() {
     
     Serial.begin(9600);
     delay(1000);
+    Serial.println(WiFi.localIP());
     ws.begin();
 }
 
