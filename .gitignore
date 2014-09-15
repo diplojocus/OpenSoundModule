@@ -1,2 +1,3 @@
+.DS_Store
 spark/core-firmware/src/OSC/*
 spark/core-firmware/inc/OSC/*
